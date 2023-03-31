@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './landing-style.css'
+import '../style/landing-style.css'
 
 let userArray = [
   {
@@ -24,12 +24,12 @@ let userArray = [
 function Landing() {
   let user=useState(userArray)
   return (
-  <div>
+  <div >
     
     <h1>HOW'S WATCHING?</h1>
    
-    <div className='container'>
-      {user[0].map((user)=><div className='square'  style={{background:user.color}}>{user.name}</div>)}
+    <div className='container' >
+      {user[0].map((user)=><div key={user.name} className='square'  style={{background:user.color}}>{user.name}</div>)}
     </div>
   </div>
   );

@@ -1,0 +1,16 @@
+div {
+    min-width: 300px;
+    min-height: 300px;
+    justify-content: space-between;
+
+  } 
+
+  .container {
+    display: flex;
+   
+  }
+  .container .rr {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+  }

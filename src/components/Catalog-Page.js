@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Move from './move-component'
 import Rented from './Rented-component'
-import './Catalog-style.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 let moviesData =
     [
         { id: 0, isRented: false, title: "My Neighbor Totoro ", year: 1988, img: "https://flxt.tmsimg.com/NowShowing/120448/120448_aa.jpg", descrShort: "This acclaimed animated tale by director Hayao Miyazaki follows schoolgirl Satsuke and her younger sister, Mei, as they settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro." },
@@ -15,7 +14,7 @@ let moviesData =
 function Catalog() {
     let [movies, setMoviesData] = useState(moviesData)
     let [budget, setBudget] = useState(100)
-
+    let [query, setQuery] = useState("")
     const decreaseBudget = () => {
         setBudget(budget -= 10)
     }
@@ -40,9 +39,27 @@ function Catalog() {
 
     }
     return (
-            <div>
-                <input type="text" id="search" name="search" value="search" />
-                <span>Budget:${budget}</span>
+        <div >
+            <input placeholder="search" onChange={event => setQuery(event.target.value)} />
+            <h3>Rented:</h3> 
+            <Rented rented={rented}  query={query} movies={movies}/>
+            <h3>Catalog:</h3>
+            <Move rented={rented}  query={query} movies={movies}/>
+            
+        </div>
+
+
+    )
+}
+
+export default Catalog;
+
+/*<h3>Rented:</h3> 
+                        <div class='row'>
+                            { move.isRented ? <Rented func={rented} img={move.img} id={move.id} sign={"-"} /> : <></>}
+                        </div>*/
+/*
+  <span>Budget:${budget}</span>
                 <div>
                     <h3>Rented:</h3>
                     <div className='row'>
@@ -55,10 +72,4 @@ function Catalog() {
                         {movies.map((move) => move.isRented ? <Move func={rented} img={move.img} id={move.id} sign={"-"} /> : <Move func={rented} img={move.img} id={move.id} sign={"+"} />)}
                     </div>
                 </div>
-            </div>
-          
-       
-    )
-}
-
-export default Catalog;
+                */

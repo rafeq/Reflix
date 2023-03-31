@@ -1,20 +1,35 @@
 import React from 'react'
-import './move-style.css'
+import '../style/move-component-style.css'
 import { Link } from 'react-router-dom'
 
-function Movie(props){
-    let id = props.id
-    /*let isRented = props.isRented
-    let title = props.title
-    let year = props.year*/
-    let img = props.img
-    let func=props.func
-    let sign=props.sign
+function Movie(props) {
+    let query=props.query
+    let movies=props.movies
     return (
         <div className='container'>
-      <Link to={`/MoveDetail/${id}`} ><img src={img} /></Link>
-      <button id={id} onClick={func} class="btn">{sign}</button>
-      </div>
+            {
+                movies.filter(move => {
+                    if (query === '') {
+                        return move;
+                    } else if (move.title.toLowerCase().includes(query.toLowerCase())) {
+                        return move;
+                    }
+                }).map((move, index) => (
+                    <div key={index}>
+
+                        <div className='container' >
+                            <div className='rr'>
+                            <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} /></Link>
+                            { move.isRented ? <button id={move.id} onClick={props.rented} className="btn">-</button> :<button id={move.id} onClick={props.rented} className="btn">+</button> }
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+            
+           
+        </div>
     )
-  }
-  export default Movie;
+}
+export default Movie;
+
