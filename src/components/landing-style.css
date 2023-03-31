@@ -1,0 +1,31 @@
+div {
+    height: 100px;
+    width: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 1.4;
+    background-color: gray;
+}
+
+h1 {
+    position: relative;
+    left: 200%;
+}
+
+.square {
+    text-align: center;
+    margin: 20pt;
+    width: 72pt;
+    height: 72pt;
+
+}
+
+.container {
+    width: 450pt;
+    height: 80pt;
+    display: flex;
+}
