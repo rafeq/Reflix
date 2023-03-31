@@ -15,11 +15,12 @@ function Rented(props) {
           } else if (move.title.toLowerCase().includes(query.toLowerCase())) {
             return move.isRented;
           }
+          return "move.isRented"
         }).map((move, index) => (
           <div key={index}>
             {move.isRented ? <div className='rr'>
               <div className='container' >
-                <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} /></Link>
+                <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} alt=""/></Link>
                 <button id={move.id} onClick={props.rented} className="btn">-</button>
               </div>
             </div> :

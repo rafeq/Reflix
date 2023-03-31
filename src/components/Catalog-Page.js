@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Move from './move-component'
 import Rented from './Rented-component'
 
+
 let moviesData =
     [
         { id: 0, isRented: false, title: "My Neighbor Totoro ", year: 1988, img: "https://flxt.tmsimg.com/NowShowing/120448/120448_aa.jpg", descrShort: "This acclaimed animated tale by director Hayao Miyazaki follows schoolgirl Satsuke and her younger sister, Mei, as they settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro." },
@@ -41,6 +42,7 @@ function Catalog() {
     return (
         <div >
             <input placeholder="search" onChange={event => setQuery(event.target.value)} />
+            <span>Budget:${budget}</span>
             <h3>Rented:</h3> 
             <Rented rented={rented}  query={query} movies={movies}/>
             <h3>Catalog:</h3>
