@@ -16,10 +16,9 @@ function Movie(props) {
                     }
                 }).map((move, index) => (
                     <div key={index}>
-
                         <div className='container' >
                             <div className='rr'>
-                            <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} /></Link>
+                            <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} alt="" /></Link>
                             { move.isRented ? <button id={move.id} onClick={props.rented} className="btn">-</button> :<button id={move.id} onClick={props.rented} className="btn">+</button> }
                             </div>
                         </div>
@@ -32,4 +31,3 @@ function Movie(props) {
     )
 }
 export default Movie;
-

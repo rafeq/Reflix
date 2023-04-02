@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Landing from './components/landing-page'
 import Catalog from './components/Catalog-Page'
-import MoveDetail from './components/move-detale-page'
+import MoveDetail from './components/move-detail-page'
 import NavBar from './components/navbar-component'
 
 function App() {

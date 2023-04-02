@@ -7,7 +7,6 @@ function Rented(props) {
   return (
 
     <div className='container'>
-
       {
         movies.filter(move => {
           if (query === '') {
@@ -15,19 +14,15 @@ function Rented(props) {
           } else if (move.title.toLowerCase().includes(query.toLowerCase())) {
             return move.isRented;
           }
-          return "move.isRented"
         }).map((move, index) => (
           <div key={index}>
-            {move.isRented ? <div className='rr'>
-              <div className='container' >
-                <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} alt=""/></Link>
-                <button id={move.id} onClick={props.rented} className="btn">-</button>
+            <div className='container' >
+              <div className='rr'>
+                <Link to={`/MoveDetail/${move.id}`} ><img src={move.img} alt="" /></Link>
+                {move.isRented ? <button id={move.id} onClick={props.rented} className="btn">-</button> : <button id={move.id} onClick={props.rented} className="btn">+</button>}
               </div>
-            </div> :
-              <></>
-            }
+            </div>
           </div>
-
         ))
       }
 
