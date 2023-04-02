@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Move from './move-component'
 import Rented from './Rented-component'
 import Data from '../data.json'
-let moviesData=Data.moviesData
 
+let moviesData=Data.moviesData
 function Catalog() {
     let [movies, setMoviesData] = useState(moviesData)
     let [budget, setBudget] = useState(100)
@@ -45,25 +45,4 @@ function Catalog() {
 
     )
 }
-
 export default Catalog;
-
-/*<h3>Rented:</h3> 
-                        <div class='row'>
-                            { move.isRented ? <Rented func={rented} img={move.img} id={move.id} sign={"-"} /> : <></>}
-                        </div>*/
-/*
-  <span>Budget:${budget}</span>
-                <div>
-                    <h3>Rented:</h3>
-                    <div className='row'>
-                        {movies.map((move) => move.isRented ? <Rented func={rented} img={move.img} id={move.id} sign={"-"} /> : <></>)}
-                    </div>
-                </div>
-                <div>
-                    <h3>Catalog:</h3>
-                    <div className='row '>
-                        {movies.map((move) => move.isRented ? <Move func={rented} img={move.img} id={move.id} sign={"-"} /> : <Move func={rented} img={move.img} id={move.id} sign={"+"} />)}
-                    </div>
-                </div>
-                */
