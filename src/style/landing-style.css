@@ -17,6 +17,7 @@ h1 {
 }
 
 .square {
+
     text-align: center;
     margin: 20pt;
     width: 72pt;
@@ -24,8 +25,8 @@ h1 {
 
 }
 
-.container {
+.container  {
+    display: flex;
     width: 450pt;
     height: 80pt;
-    display: flex;
 }

@@ -1,0 +1,20 @@
+{
+    "users": [
+        {
+          "name": "Mona",
+          "color": "blue"
+        },
+        {
+          "name": "Jasmyne",
+          "color": "red"
+        },
+        {
+          "name": "Aura",
+          "color": "green"
+        },
+        {
+          "name": "Tina",
+          "color": "yellow"
+        }
+      ]
+}
